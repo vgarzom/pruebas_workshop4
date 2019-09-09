@@ -32,9 +32,17 @@ function unleashGremlins(ttl, callback) {
     .gremlin(gremlins.species.clicker()
       .clickTypes(['click'])
       .canClick((element) => {
-        return element.nodeName === "BUTTON" || element.nodeName === "A";
-      }));
-      
+        return element.nodeName === "BUTTON"
+          || element.nodeName === "A";
+      }))
+    .gremlin(gremlins.species.formFiller()
+      .canFillElement((element) => {
+        return element.nodeName === "SELECT"
+          || element.nodeName === "INPUT"
+          || element.nodeName === "TEXTAREA";
+      })
+    );
+
   horde.seed(1234);
 
   horde.after(callback);
