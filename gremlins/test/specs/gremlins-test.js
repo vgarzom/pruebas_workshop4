@@ -43,6 +43,10 @@ function unleashGremlins(ttl, callback) {
       })
     );
 
+  horde.strategy(gremlins.strategies.distribution()
+    .delay(10) // wait 50 ms between each action
+    .distribution([0.75, 0.25]) // the first three gremlins have more chances to be executed than the last
+  )
   horde.seed(1234);
 
   horde.after(callback);
