@@ -9,7 +9,7 @@
   "author": "Sebastian Sierra",
   "license": "ISC",
   "dependencies": {
-    "webdriverio": "^4.8.0"
+    "webdriverio": "^8.10.0"
   },
   "devDependencies": {
     "wdio-jasmine-framework": "^0.3.2",
